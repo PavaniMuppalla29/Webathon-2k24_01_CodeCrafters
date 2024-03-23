@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login and Sign-up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        .form-container h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-container label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="password"],
+        .form-container input[type="email"],
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .form-container button {
+            background-color: #4543b8;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #4543b8;
+        }
+
+        .form-container .error {
+            color: red;
+            margin-bottom: 10px;
+        }
+
+        .form-container .success {
+            color: green;
+            margin-bottom: 10px;
+        }
+
+        .form-container .sign-up-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container" id="loginFormContainer">
+        <h1>User Login</h1>
+        <form id="loginForm">
+            <label for="loginUsername">Username:</label>
+            <input type="text" id="loginUsername" name="loginUsername" required>
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="loginPassword" required>
+            <button type="submit">Login</button>
+            <p class="error" id="loginError" style="display: none;">Invalid username or password</p>
+        </form>
+        <p class="sign-up-link">Don't have an account? <a href="#" id="showSignUpFormLink">Sign up here</a></p>
+    </div>
+
+    <div class="form-container" id="signUpFormContainer" style="display: none;">
+        <h1>User Sign-up</h1>
+        <form id="signUpForm">
+            <label for="signupUsername">Username:</label>
+            <input type="text" id="signupUsername" name="signupUsername" required>
+            <label for="signupPassword">Password:</label>
+            <input type="password" id="signupPassword" name="signupPassword" required>
+            <label for="signupEmail">Email:</label>
+            <input type="email" id="signupEmail" name="signupEmail" required>
+            <button type="submit">Sign up</button>
+            <p class="error" id="signupError" style="display: none;">User already exists</p>
+            <p class="success" id="signupSuccess" style="display: none;">Sign up successful. Redirecting...</p>
+        </form>
+        <p class="sign-up-link">Already have an account? <a href="#" id="showLoginFormLink">Login here</a></p>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get form data
+            const formData = {
+                username: document.getElementById("loginUsername").value,
+                password: document.getElementById("loginPassword").value
+            };
+
+            // Make HTTP POST request to user login endpoint
+            fetch('http://localhost:4000/user-api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = "http://127.0.0.1:5500/frontend/a.html"; 
+                } else {
+                    document.getElementById("loginError").style.display = "block";
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                
+            });
+        });
+
+        document.getElementById("signUpForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            // Get form data
+            const formData = {
+                username: document.getElementById("signupUsername").value,
+                password: document.getElementById("signupPassword").value,
+                email: document.getElementById("signupEmail").value
+            };
+
+            // Make HTTP POST request to user creation endpoint
+            fetch('http://localhost:4000/user-api/user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById("signupSuccess").style.display = "block";
+                    setTimeout(() => {
+                        window.location.href = "./a.html"; // Redirect to home page after a short delay
+                    }, 2000);
+                } else {
+                    document.getElementById("signupError").style.display = "block";
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle errors such as network issues, server errors, etc.
+            });
+        });
+
+        document.getElementById("showSignUpFormLink").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+
+            document.getElementById("loginFormContainer").style.display = "none";
+            document.getElementById("signUpFormContainer").style.display = "block";
+        });
+
+        document.getElementById("showLoginFormLink").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+
+            document.getElementById("signUpFormContainer").style.display = "none";
+            document.getElementById("loginFormContainer").style.display = "block";
+        });
+    </script>
+</body>
+</html>

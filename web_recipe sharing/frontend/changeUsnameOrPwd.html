@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Username or Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .btn {
+            background-color: #4543b8;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        #apply-button {
+    width: calc(100% - 40px); /* Adjusted to accommodate padding */
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Added margin for spacing */
+}
+
+#apply-button:hover {
+    background-color: #45a049;
+}
+
+        .btn:hover {
+            background-color: #4543b8;
+        }
+
+        .swap-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="usernameContainer">
+    <h2>Change Username</h2>
+    <form id="changeUsernameForm">
+        <div class="form-group">
+            <label for="currentUsername">Current Username</label>
+            <input type="text" id="currentUsername" name="currentUsername" required>
+        </div>
+        <div class="form-group">
+            <label for="newUsername">New Username</label>
+            <input type="text" id="newUsername" name="newUsername" required>
+        </div>
+        <button type="submit" class="btn">Change Username</button>
+    </form>
+</div>
+
+<div class="container" id="passwordContainer" style="display: none;">
+    <h2>Change Password</h2>
+    <form id="changePasswordForm">
+        <div class="form-group">
+            <label for="currentPassword">Current Password</label>
+            <input type="password" id="currentPassword" name="currentPassword" required>
+        </div>
+        <div class="form-group">
+            <label for="newPassword">New Password</label>
+            <input type="password" id="newPassword" name="newPassword" required>
+        </div>
+        <button type="submit" class="btn">Change Password</button>
+    </form>
+</div>
+
+<div class="swap-link">
+    <a href="#" id="swapLink">Change Password</a>
+</div>
+<button id="apply-button">Apply Recipes</button>
+
+<script>
+    document.getElementById("apply-button").addEventListener("click", function() {
+      
+        window.location.href = "recipeLogging.html";
+    });
+    const usernameContainer = document.getElementById('usernameContainer');
+    const passwordContainer = document.getElementById('passwordContainer');
+    const swapLink = document.getElementById('swapLink');
+
+    // Event listener for swapping forms
+    swapLink.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        if (usernameContainer.style.display === 'none') {
+            usernameContainer.style.display = 'block';
+            passwordContainer.style.display = 'none';
+            swapLink.textContent = 'Change Password';
+        } else {
+            usernameContainer.style.display = 'none';
+            passwordContainer.style.display = 'block';
+            swapLink.textContent = 'Change Username';
+        }
+    });
+</script>
+
+</body>
+</html>

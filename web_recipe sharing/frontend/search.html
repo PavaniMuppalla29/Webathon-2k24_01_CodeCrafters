@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Search</title>
+    <style>
+        #apply-button {
+    width: calc(100% - 40px); /* Adjusted to accommodate padding */
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 0; /* Added margin for spacing */
+}
+
+#apply-button:hover {
+    background-color: #45a049;
+}
+
+
+    </style>
+   
+</head>
+<body>
+    <h1>Recipe Search</h1>
+    <label for="recipeTitle">Enter Recipe Title:</label>
+    <input type="text" id="recipeTitle" name="recipeTitle" required>
+    <button id="searchButton">Search</button>
+
+    <script>
+        document.getElementById("searchButton").addEventListener("click", function() {
+            const recipeTitle = document.getElementById("recipeTitle").value;
+            const url = `http://localhost:4000/user-api/search/${encodeURIComponent(recipeTitle)}`;
+
+
+            // Send HTTP GET request to search for the recipe
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Process the response data here
+                    console.log(data);
+                })
+                .catch(error => {
+                    // Handle errors here
+                    console.error('Error searching for recipe:', error);
+                });
+        });
+        document.getElementById("searchButton").addEventListener("click", function() {
+            // Redirect to home.html
+            window.location.href = "home.html";
+        });
+    </script>
+</body> 
+</html>

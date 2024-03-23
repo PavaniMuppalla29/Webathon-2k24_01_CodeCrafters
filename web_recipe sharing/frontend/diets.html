@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diets</title>
+<link rel="stylesheet" href="./styles.css"> <!-- Include your CSS file for styling -->
+<style>
+    /* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.diet-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.diet-list li {
+    margin-bottom: 10px;
+}
+
+.diet-list input[type="checkbox"],
+.diet-list label {
+    width: 100%;
+    display: block;
+}
+
+#apply-button {
+    width: calc(100% - 40px); /* Adjusted to accommodate padding */
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Added margin for spacing */
+}
+
+#apply-button:hover {
+    background-color: #45a049;
+}
+
+  .diet-list {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <section id="diets">
+    <h2>Choose a Diet</h2>
+    <ul class="diet-list">
+      <li>
+        <input type="checkbox" id="vegetarian-no-meat-no-eggs" name="diet" value="Vegetarian (No Meat, No Eggs)">
+        <label for="vegetarian-no-meat-no-eggs">Vegetarian (No Meat, No Eggs)</label>
+      </li>
+      <li>
+        <input type="checkbox" id="low-fodmap" name="diet" value="Low FODMAP">
+        <label for="low-fodmap">Low FODMAP</label>
+      </li>
+      <li>
+        <input type="checkbox" id="vegetarian-no-meat-no-dairy" name="diet" value="Vegetarian (No Meat, No Dairy)">
+        <label for="vegetarian-no-meat-no-dairy">Vegetarian (No Meat, No Dairy)</label>
+      </li>
+      <li>
+        <input type="checkbox" id="vegetarian-vegan" name="diet" value="Vegetarian Vegan">
+        <label for="vegetarian-vegan">Vegetarian Vegan</label>
+      </li>
+      <li>
+        <input type="checkbox" id="paleo" name="diet" value="Paleo">
+        <label for="paleo">Paleo</label>
+      </li>
+      <li>
+        <input type="checkbox" id="pescetarian" name="diet" value="Pescetarian">
+        <label for="pescetarian">Pescetarian</label>
+      </li>
+      <li>
+        <input type="checkbox" id="ketogenic" name="diet" value="Ketogenic">
+        <label for="ketogenic">Ketogenic</label>
+      </li>
+    </ul>
+    <button id="apply-button">Apply</button>
+    <script>
+        document.getElementById("apply-button").addEventListener("click", function() {
+            // Redirect to home.html
+            window.location.href = "home.html";
+        });
+    </script>
+  </section>
+</div>
+</body>
+</html>

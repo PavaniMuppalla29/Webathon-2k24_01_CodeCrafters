@@ -1,0 +1,75 @@
+/* mychoice.css */
+
+/* Reset default margin and padding */
+body,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the list items */
+li {
+    list-style: none;
+}
+
+/* Style the links */
+a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect */
+a:hover {
+    background-color: #f0f0f0;
+}
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.mychoice-list {
+    list-style: none;
+    padding: 0;
+}
+
+.mychoice-list li {
+    margin-bottom: 10px;
+}
+
+.mychoice-list a {
+    display: block;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.mychoice-list a:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+
+/* Optional: Add more styling as needed */
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indian Dishes</title>
+<link rel="stylesheet" href="./styles.css"> <!-- Include your CSS file for styling -->
+<style>
+  .h2 {
+    text-align: center;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensure three columns */
+    grid-gap: 20px;
+  }
+  .grid-container > div {
+    text-align: center;
+  }
+  .dish img {
+    max-width: 100%;
+    height: 200px; /* Fixed height for all images */
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Indian Dishes</h2>
+  <div class="grid-container">
+    <!-- North Indian Dishes -->
+    <div class="dish">
+      <a href="butter-chicken.html">
+        <img src="https://www.licious.in/blog/wp-content/uploads/2020/10/butter-chicken-.jpg" alt="Indian Dish 1">
+        <p>Butter Chicken</p>
+      </a>
+    </div>
+    <div class="dish">
+      <a href="birayani.html">
+        <img src="https://recipes.net/wp-content/uploads/2023/05/air-fryer-chicken-biryani-recipe_6968eb6ab4a5ae22d136dab86c9ea8af.jpeg" alt="Indian Dish 2">
+        <p>Chicken Biryani</p>
+      </a>
+    </div>
+    <div class="dish">
+      <a href="cholebhature.html">
+        <img src="https://i.ytimg.com/vi/csfIOfMnRGg/maxresdefault.jpg" alt="Indian Dish 3">
+        <p>Chole Bhature</p>
+      </a>
+    </div>
+    <!-- South Indian Dishes -->
+    <div class="dish">
+      <a href="dosa.html">
+        <img src="https://www.awesomecuisine.com/wp-content/uploads/2009/06/Plain-Dosa.jpg" alt="Indian Dish 4">
+        <p>Dosa</p>
+      </a>
+    </div>
+    <div class="dish">
+      <a href="idlisambar.html">
+        <img src="https://vaya.in/recipes/wp-content/uploads/2018/02/Idli-and-Sambar-1.jpg" alt="Indian Dish 5">
+        <p>Idli Sambar</p>
+      </a>
+    </div>
+    <div class="dish">
+        <a href="roganjosh.html">
+          <img src="https://img.taste.com.au/TFQ_zAsZ/taste/2017/06/lamb-rogan-josh-127388-1.jpg" alt="Indian Dish 2">
+          <p>Rogan Josh</p>
+        </a>
+      </div>
+  </div>
+</div>
+</body>
+</html>
+

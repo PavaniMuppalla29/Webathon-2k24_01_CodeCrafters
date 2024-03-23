@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Recipes</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .cuisine {
+            margin-bottom: 30px;
+        }
+        .cuisine-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .recipe {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            flex-direction: column;
+        }
+        .recipe:hover {
+            transform: translateY(-5px);
+        }
+        .recipe img {
+            width: 150px;
+            height: auto;
+        }
+        .recipe-details {
+            padding: 15px;
+        }
+        .recipe-details h3 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #333;
+            cursor: pointer;
+        }
+        .recipe-content {
+            display: none;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .add-favorite-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .add-favorite-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Indian Cuisine -->
+    <div class="cuisine">
+        <h2 class="cuisine-title">Indian Cuisine</h2>
+        <div class="recipe" onclick="toggleRecipe('recipe1')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrgawLHqqCplb7qaAPqOmZpskJ6zdYtFokpg&usqp=CAU" alt="Indian Recipe 1">
+            <div class="recipe-details">
+                <h3>Panner Butter Masala</h3>
+                <div class="recipe-content" id="recipe1">
+                    <h2>Rating:</h2>
+                    <p>4.5</p>
+
+                    <h2>Calories:</h2>
+                    <p>635 cal</p>
+
+                   <p> <h2>Ingredients:</h2>
+                    <p>Tomatoes, Paneer, Cashew, Butter, Onion, Garlic</p>
+
+                    
+
+                    <h2>Preparation:</h2>
+                    <ol class="instructions">
+                        <li>Soak 18 to 20 cashews in ⅓ cup hot water for 20 to 30 minutes.</li>
+                        <li>While the cashews are soaking, you can prep the other ingredients. It’s time for chopping tomatoes, chopping and preparing the ginger-garlic paste, and slicing paneer into cubes.</li>
+                        <li>To make the ginger garlic paste, crush a 1 inch piece of peeled ginger with 3 to 4 small to medium-sized garlic cloves in a mortar & pestle. Continue crushing until it is a semi-fine or fine paste. Keep aside.</li>
+                        <li>After 20 to 30 minutes, drain the water and add the soaked cashews to a blender or mixer-grinder. Also, add 2 to 3 tablespoons fresh water (or as much as is required to blend to a fine paste).</li>
+                        <li>Blend to a smooth paste without any tiny bits or chunks of cashews. Remove the cashew paste from the blender and set it aside.</li>
+                        <li>In the same blender, add 2 cups of diced or roughly chopped tomatoes.</li>
+                        <li>Blend to a smooth tomato puree. Set aside.</li>
+                        <li>Heat a thick bottomed pan or a heavy pan. Keep the heat to a low or medium-low. Add 2 tablespoons (or 3 to 4 tablespoons for a richer version) butter in a pan.</li>
+                        <li>Keep the heat to a low. Add 1 medium-sized tej patta and fry for 2 to 3 seconds, or until fragrant.</li>
+                        <li>Add the prepared crushed ginger-garlic or 1 teaspoon ready-made ginger-garlic paste. Sauté until the raw aroma of the ginger-garlic disappears, about 10 to 12 seconds.</li>
+                        <li>Pour in the prepared tomato purée. Mix it very well with the butter. Begin to cook the tomato</li>
+                    </ol>
+                        </p>
+                </div>
+            </div>
+        </div>
+        <div class="recipe" onclick="toggleRecipe('recipe2')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNH76EQDL40wHparIwuHZjnrpwvXlfPdaZpQ&usqp=CAU" alt="Indian Recipe 2">
+            <div class="recipe-details">
+                <h3>Chicken Tikka</h3>
+                <div class="recipe-content" id="recipe2">
+                    <div class="recipe-details"> <!-- Add this opening tag -->
+                        <h2>Rating:</h2>
+                    <p>4.5</p>
+
+                    <h2>Calories:</h2>
+                    <p>735 cal</p>
+                        <h2>Ingredients:</h2>
+                        <ul>
+                            <li>12 boneless skinless chicken thighs</li>
+                            <li>For Tandoori Marinade:</li>
+                            <ul>
+                                <li>1 Tbsp cumin powder</li>
+                                <li>1 Tbsp coriander powder</li>
+                                <li>2 tsp madras curry powder</li>
+                                <li>1 tsp turmeric powder</li>
+                                <li>1 tsp mint sauce (not mint jelly)</li>
+                                <li>2 tsp kashmiri chili powder</li>
+                                <li>1 Tbsp coriander stems/leaves chopped</li>
+                                <li>2 tsp salt</li>
+                                <li>1 Tbsp kasoor methi – dried fenugreek leaves</li>
+                                <li>1 Tbsp Patak's tandoori marinade (optional)</li>
+                                <li>1 Tbsp garlic ginger paste</li>
+                                <li>3 Tbsp vegetable oil</li>
+                                <li>1/4 cup water – you may need a little more. You are after a runny paste.</li>
+                            </ul>
+                    </div>
+                    <div class="recipe-instructions">
+                        <h2>Instructions:</h2>
+                        <ol class="instructions">
+                            <li>12 boneless skinless chicken thighs</li>
+                            <li>Cut each thigh into 4 pieces. Cut each breast, if using, into 8 pieces. Combine tandoori marinade with chicken. Refrigerate for at least 1 hour and up to 12 hours.</li>
+                            <li>Soak skewers in water for 30 minutes.</li>
+                            <li>Add the lemon juice to the chicken. Mix to combine. Let stand no more than one hour.</li>
+                            <li>Light your grill. Build a two-zone fire if using charcoal. Turn one burner to high and another to low if using gas.</li>
+                            <li>Remove chicken from marinade. Use gloves if you have them. Tandoori marinade stains something fierce.</li>
+                            <li>Skewer the chicken.</li>
+                            <li>Grill over indirect heat until almost done – around 10-15 minutes. You want an internal temperature of about 150F for breasts or 160F for thighs at this point. You will be cooking them a bit more over direct heat. Your final target is 165F for breasts and 175F for thighs.</li>
+                            <li>Move chicken skewers over direct (high) heat and grill an additional 2-4 minutes, turning every minute. You want a bit of char but you don’t want it to burn or dry out.</li>
+
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add more favorite recipes for Indian cuisine if needed -->
+    </div>
+
+    <!-- Button to add more favorites -->
+    <button class="add-favorite-btn" onclick="addRecipe()">Add More Favorites</button>
+</div>
+
+<script>
+    // Function to toggle recipe details visibility
+    function toggleRecipe(recipeId) {
+        var recipeContent = document.getElementById(recipeId);
+        recipeContent.style.display = recipeContent.style.display === "none" ? "block" : "none";
+    }
+
+    // Function to add more recipes dynamically
+    function addRecipe() {
+        alert("Functionality to add more recipes will be implemented here.");
+        // You can implement logic to add more favorite recipes dynamically
+    }
+</script>
+
+</body>
+</html>

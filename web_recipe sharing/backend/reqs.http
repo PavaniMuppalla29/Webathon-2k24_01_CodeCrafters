@@ -1,0 +1,35 @@
+###user api reqs
+###user creation
+post http://localhost:4000/user-api/user
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"anand",
+    "password":"anand",
+    "email":"rada@mail.com"
+}
+###user login
+post http://localhost:4000/user-api/login
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"anand",
+    "password":"anand"
+   
+}
+### posting recipes
+post http://localhost:4000/user-api/recipe
+Content-Type: application/json
+###reading articles of all uers
+get http://localhost:4000/user-api/articles
+###
+get http://localhost:4000/user-api/search/:q
+Content-Type: application/json
+###
+post http://localhost:4000/user-api/change-password
+Content-Type: application/json
+###
+post http://localhost:4000/user-api/change-username
+Content-Type: application/json

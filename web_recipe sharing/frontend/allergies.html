@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allergies</title>
+<link rel="stylesheet" href="./styles.css"> <!-- Include your CSS file for styling -->
+<style>
+   
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.allergy-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.allergy-list li {
+    margin-bottom: 10px;
+}
+
+.allergy-list input[type="checkbox"],
+.allergy-list label {
+    width: 100%;
+    display: block;
+}
+
+#apply-button {
+    width: calc(100% - 40px); /* Adjusted to accommodate padding */
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 0; /* Added margin for spacing */
+}
+
+#apply-button:hover {
+    background-color: #45a049;
+}
+
+
+  .allergy-list {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <section id="allergies">
+    <h2>Choose an Allergy</h2>
+    <ul class="allergy-list">
+      <li>
+        <input type="checkbox" id="wheat-free" name="allergy" value="Wheat-Free">
+        <label for="wheat-free">Wheat-Free</label>
+      </li>
+      <li>
+        <input type="checkbox" id="dairy-free" name="allergy" value="Dairy-Free">
+        <label for="dairy-free">Dairy-Free</label>
+      </li>
+      <li>
+        <input type="checkbox" id="peanut-free" name="allergy" value="Peanut-Free">
+        <label for="peanut-free">Peanut-Free</label>
+      </li>
+      <li>
+        <input type="checkbox" id="egg-free" name="allergy" value="Egg-Free">
+        <label for="egg-free">Egg-Free</label>
+      </li>
+      <li>
+        <input type="checkbox" id="gluten-free" name="allergy" value="Gluten-Free">
+        <label for="gluten-free">Gluten-Free</label>
+      </li>
+      <li>
+        <input type="checkbox" id="soy-free" name="allergy" value="Soy-Free">
+        <label for="soy-free">Soy-Free</label>
+      </li>
+    </ul>
+    <button id="apply-button">Apply</button>
+    <script>
+        document.getElementById("apply-button").addEventListener("click", function() {
+            // Redirect to home.html
+            window.location.href = "home.html";
+        });
+    </script>
+  </section>
+</div>
+</body>
+</html>
